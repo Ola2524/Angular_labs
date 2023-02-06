@@ -1,0 +1,39 @@
+.skills{
+    margin-top: 100px;
+    background-color: #3d3d3d;
+}
+
+.my-focus h4::after{
+    content: "";
+    width: 200px;
+    height: 2px;
+    background-color: #FFF;
+    display: block;
+    margin: 20px auto;
+}
+
+.my-focus ul{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.my-focus li{
+    list-style: none;
+    text-align: left;
+    width: 180px;
+    margin: 10px auto;
+}
+
+.skills__progress-bar .progress{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.skills__progress-bar .title{
+    background-color: #959188;
+}
+
+.skills__progress-bar .progress-bar{
+    background-color: #e0dfdb;
+}

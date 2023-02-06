@@ -1,0 +1,21 @@
+.banner{
+    background-image: url("https://guardian.ng/wp-content/uploads/2019/11/hurting-woman.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.background__color{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.main{
+    margin: 70px 40px;
+}

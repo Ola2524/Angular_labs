@@ -1,0 +1,24 @@
+.protfolio{
+    margin-top: 50px;
+}
+
+.protfolio .row div{
+    margin: 20px;
+    padding: 80px 30px;
+}
+
+.protfolio .protfolio-top div:nth-child(odd){
+    background-color: #959188;
+}
+
+.protfolio .protfolio-top div:nth-child(2){
+    background-color: #404040;
+}
+
+.protfolio .protfolio-bottom div:nth-child(odd){
+    background-color: #404040;
+}
+
+.protfolio .protfolio-bottom div:nth-child(2){
+    background-color: #959188;
+}

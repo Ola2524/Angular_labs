@@ -1,0 +1,14 @@
+.footer{
+    background-color: #15120d;
+    color: #FFF;
+}
+
+.footer i{
+    color: #FFF;
+    margin-right: 10px;
+}
+
+.footer__icons{
+    font-size: 20px;
+    margin: 10px;
+}
