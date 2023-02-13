@@ -1,0 +1,12 @@
+<section class="todo-list">
+    <div class="container p-5">
+        <h2 class="text-center mb-4">Let's get some work done!</h2>
+        <div class="row" *ngFor="let list of lists; let i=index;">
+            <div class="col-6 mb-2">
+                <button (click)="complete(item)" class="btn btn-outline-dark me-3">Complete</button>
+                <button (click)="delete(lists,i)" class="btn btn-outline-dark me-5">Delete</button>
+                <span #item class="text-center">{{ list }}</span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+h2::after{
+    content: '';
+    width: 80px;
+    height: 5px;
+    display: block;
+    background-color: #00000015;
+    margin: 20px auto 0;
+}
+
+span{
+    font-size: 22px;
+}

@@ -1,0 +1,8 @@
+<div class="todo-app">
+    <div class="container p-5">
+        <h1 class="text-end text-white mb-4">To-Do App!</h1>
+        <p class="text-end text-white">Add New To-Do</p>
+        <input class="form-control" #val type="text" placeholder="Enter new task" aria-label="default input example">
+        <button (click)="SendToParent(val.value)" class="btn btn-outline-light mt-3 float-end">Add</button>
+    </div>
+</div>
