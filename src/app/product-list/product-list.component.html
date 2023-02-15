@@ -1,0 +1,9 @@
+
+<div class="card-group">
+    <div class="row justify-content-center">
+        <div *ngFor="let product of product_list" class="col-md-3 m-2 p-2">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+    </div>
+    
+</div>
