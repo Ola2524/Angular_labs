@@ -1,0 +1,95 @@
+<div class="card">
+    <form [formGroup]="registerForm" (ngSubmit)="submitRegiter()" class="p-5" #loginForm="ngForm">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" name="name" formControlName="name" [ngClass]="{'border-danger': registerForm.controls['name'].touched && registerForm.controls['name'].invalid}" class="form-control">
+            <div *ngIf="registerForm.controls['name'].touched">
+                <div id="registernamehelp" class="form-text text-danger" *ngIf="registerForm.controls['name']?.errors?.['required']">
+                    Name is required
+                </div>
+            </div>
+        </div>
+            
+        <div class="mb-3">
+
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="email" formControlName="email" [ngClass]="{'border-danger': registerForm.controls['email'].touched && registerForm.controls['email'].invalid}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="registerForm.controls['email'].touched">
+                <div id="registeremailhelp" class="form-text text-danger" *ngIf="registerForm.controls['email']?.errors?.['required']">
+                    Email is required
+                </div>
+                <div id="registeremailhelp" class="form-text text-danger" *ngIf="registerForm.controls['email']?.errors?.['pattern']">
+                    Enter valid email
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">username</label>
+          <input type="text" name="username" formControlName="username" [ngClass]="{'border-danger': registerForm.controls['username'].touched && registerForm.controls['username'].invalid}" class="form-control">
+            <div *ngIf="registerForm.controls['username'].touched">
+                <div id="registerusernamehelp" class="form-text text-danger" *ngIf="registerForm.controls['username']?.errors?.['required']">
+                    username is required
+                </div>
+            </div>
+
+            <div *ngIf="registerForm.controls['username'].touched">
+                <div id="registerusernamehelp" class="form-text text-danger" *ngIf="registerForm.get('username')?.hasError('whitespace')">
+                    username cannot have white spaces
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" formControlName="password"class="form-control" [ngClass]="{'border-danger': registerForm.controls['password'].touched && registerForm.controls['password'].invalid}" name="password" id="exampleInputPassword1">
+            <div *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid">
+                <div id="registerpasswordhelp" class="form-text text-danger" *ngIf="registerForm.controls['password']?.errors?.['required']">
+                    Password is required
+                </div>
+            </div>
+            <div *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid">
+                <div id="registerpasswordhelp" class="form-text text-danger" *ngIf="registerForm.controls['password']?.errors?.['minlength']">
+                    password length must not be less than 8 characters 
+                </div>
+            </div>
+            <div *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].invalid">
+                <div id="registerpasswordhelp" class="form-text text-danger" *ngIf="registerForm.controls['password']?.errors?.['pattern']">
+                    password must be complex
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="mb-3">
+            <label for="exampleInputPasswordconfirm1" class="form-label">Confirm password</label>
+            <input type="password" formControlName="confirm_password"class="form-control" [ngClass]="{'border-danger': registerForm.controls['confirm_password'].touched && registerForm.controls['confirm_password'].invalid}" name="confirm_password" id="exampleInputPassword1">
+            <div *ngIf="registerForm.controls['confirm_password'].touched && registerForm.controls['confirm_password'].invalid">
+                <div id="registerconfirmhelp" class="form-text text-danger" *ngIf="registerForm.controls['confirm_password']?.errors?.['required']">
+                    Confirm password is required
+                </div>
+            </div>
+            <div *ngIf="registerForm.controls['confirm_password'].touched">
+                <div id="registerconfirm_passwordhelp" class="form-text text-danger" *ngIf="registerForm.get('confirm_password')?.hasError('nomatch')">
+                    Confirm password not match password
+                </div>
+            </div>
+            <div *ngIf="registerForm.controls['confirm_password'].touched && registerForm.controls['confirm_password'].invalid">
+                <div id="registerpasswordhelp" class="form-text text-danger" *ngIf="registerForm.controls['confirm_password']?.errors?.['minlength']">
+                    confirm_password length must not be less than 8 characters 
+                </div>
+            </div>
+            <div *ngIf="registerForm.controls['confirm_password'].touched && registerForm.controls['confirm_password'].invalid">
+                <div id="registerpasswordhelp" class="form-text text-danger" *ngIf="registerForm.controls['confirm_password']?.errors?.['pattern']">
+                    confirm_password must be complex
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+      </form>
+    </div>
+
+<p class="text-center mt-3">Already have account? <a routerLink="/login" class="text-dark">Login</a></p>
+
+    
+    

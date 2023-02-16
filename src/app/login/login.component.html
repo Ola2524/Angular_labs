@@ -1,0 +1,32 @@
+<div class="card">
+<form class="p-5" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" #email="ngModel" [ngClass]="{'border-danger': email.touched && email.invalid}"  ngModel required pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div *ngIf="email.touched && email.invalid">
+            <div id="loginemailhelp" class="form-text text-danger" *ngIf="email?.errors?.['required']">
+                Email is required
+            </div>
+            <div id="loginemailhelp" class="form-text text-danger" *ngIf="email?.errors?.['pattern']">
+                Enter valid email
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" #pass="ngModel" class="form-control" [ngClass]="{'border-danger': email.touched && email.invalid}" name="password" ngModel required id="exampleInputPassword1">
+      <div *ngIf="pass.touched && pass.invalid">
+        <div id="loginemailhelp" class="form-text text-danger" *ngIf="pass?.errors?.['required']">
+            Password is required
+        </div>
+    </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+
+<p class="text-center mt-3">Don't have account? <a routerLink="/register" class="text-dark">Register</a></p>
