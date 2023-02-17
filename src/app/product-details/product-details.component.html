@@ -1,0 +1,13 @@
+<div class="card mb-3">
+    <img src="{{ product.thumbnail }}" class="card-img-top w-50" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <p [ngClass]="{'text-danger':product.stock==0}" *ngIf="product.stock==0;">out of stock</p>
+      <p [ngClass]="{'text-success':product.stock>0}" *ngIf="product.stock>0;">In stock</p>
+      <p class="card-text">Rating: {{ product.rating }}</p>
+      <p class="card-text">Brand: {{ product.brand }}</p>
+      <p class="card-text">Category: {{ product.category }}</p>
+      <p class="card-text">{{ product.price | currency:'EGP ' }}</p>
+    </div>
+</div>

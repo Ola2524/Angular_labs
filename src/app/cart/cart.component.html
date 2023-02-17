@@ -1,0 +1,22 @@
+<!-- <a href="" (onload)="pushItem(product)"></a> -->
+<!-- <button (click)="pushItem(product)"></button> -->
+<div class="card mb-3" style="max-width: 540px;" *ngIf="counter>0;">
+    <div class="row g-0" *ngFor="let cartItem of cart;">
+      <div class="col-md-4">
+        <img src="{{ cartItem.thumbnail }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ cartItem.title }}</h5>
+          <p class="card-text">{{ cartItem.description }}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <p [ngClass]="{'text-danger':cartItem.stock==0}" *ngIf="cartItem.stock==0;">out of stock</p>
+        <p [ngClass]="{'text-success':cartItem.stock>0}" *ngIf="cartItem.stock>0;">In stock</p>
+        <p class="card-text">{{ cartItem.price | currency:'EGP ' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div *ngIf="counter==0;" class="d-flex justify-content-center align-items-center" style="height: 70vh;">
+  <h3>Empty cart</h3>
+</div>

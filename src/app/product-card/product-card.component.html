@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-details" (click)="product_details()">
+    <img src="{{ product.thumbnail }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <p [ngClass]="{'text-danger':product.stock==0}" *ngIf="product.stock==0;">out of stock</p>
+      <p [ngClass]="{'text-success':product.stock>0}" *ngIf="product.stock>0;">In stock</p>
+      <p class="card-text">{{ product.price | currency:'EGP ' }}</p>
+    </div>
+  </div>
+  <div class="mb-3 text-center">
+    <button class="btn btn-outline-dark" (click)="redirectToCart()">Add to cart</button>
+  </div>
+</div>
